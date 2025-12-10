@@ -1,6 +1,6 @@
 # Foundational Data Products – Portfolio & AI PM Projects
 
-![Foundational Data Products Blueprint logo](blueprint-social-badge-navy.jpg)
+![Foundational Data Products Blueprint logo](blueprint-icon-64.png)
 
 ## About
 
