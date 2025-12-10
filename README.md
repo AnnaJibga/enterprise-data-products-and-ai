@@ -48,3 +48,4 @@ Each project folder includes its own `README.md` with details on context, setup 
 ## Data and confidentiality
 
 All examples, datasets, and scenarios in this repository are entirely synthetic and loosely inspired by common patterns in large enterprises. No real company or client data is used, and no publisher‑owned manuscript content is reproduced.
+Add logo image
