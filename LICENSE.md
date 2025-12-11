@@ -1,18 +1,11 @@
-# Contributing to the Enterprise Data Products Simulator
+# MIT License
 
-Thank you for your interest in contributing!  
-This project is part of the **Foundational Data Products Blueprint** ecosystem and aims to provide an educational, interactive leadership simulator for data product strategy.
+Copyright (c) 2025 Anna Jibgashvili
 
-We welcome contributions of all kinds — enhancements, bug fixes, new scenarios, documentation improvements, and feature ideas.
+Permission is hereby granted, free of charge, to any person obtaining a copy of this repository and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, and sublicense copies of the Software, subject to the following conditions:
 
----
+1. The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-## 🧩 How to Contribute
+2. This repository is provided for educational and portfolio purposes. It does not grant any rights to use the author's name, likeness, or book/manuscript content in marketing, endorsements, or derivative publications.
 
-### 1. Fork the Repository
-Click **Fork** at the top of the GitHub repo.
-
-### 2. Clone Your Fork
-```bash
-git clone https://github.com/YOUR-USERNAME/data-products-simulator.git
-cd data-products-simulator
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
