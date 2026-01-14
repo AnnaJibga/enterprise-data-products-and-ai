@@ -129,6 +129,34 @@ Model choice follows these principles:
    Models consuming uncertified or unstable inputs are restricted to assistive roles.
 
 ---
+## Risk → Observability Signals → PM Actions
+
+This section defines how risks introduced by model features are detected early and what product-level actions are required when signals breach acceptable thresholds.
+
+The table below defines how enterprise AI risks are **detected early** and what **AI Product Management actions** are expected when signals breach thresholds.
+
+| Risk Area | Leading Observability Signals | Why This Signal Matters | Expected PM Action |
+|----------|-----------------------------|--------------------------|--------------------|
+| Non-deterministic behavior | Output variance for identical inputs | Indicates loss of auditability and trust | Constrain automation level, require replay logging |
+| Hallucination / grounding failure | Missing or low-confidence source attribution | Outputs may not reflect enterprise knowledge | Restrict to assistive use, tighten retrieval constraints |
+| Data / meaning drift | Change in feature distribution or semantic mismatch | Model learning diverges from original intent | Trigger retraining review or scope reduction |
+| Cost explosion | Cost per decision increasing faster than usage | Reuse is amplifying spend unexpectedly | Introduce usage caps, caching, or model downgrade |
+| Trust decay | Rising override or escalation rates | Users no longer trust outputs | Pause expansion, investigate explainability gaps |
+| Latency instability | P95 / P99 latency spikes | Downstream systems become brittle | Enable fallback paths or degrade gracefully |
+| Governance violations | Access anomalies or policy breaches | Regulatory and reputational exposure | Immediate suspension of affected workflows |
+| Silent automation creep | Expansion of automated decisions without approval | Loss of decision accountability | Reinstate approval gates and audit decision scope |
+
+---
+
+### Interpretation
+
+- Observability signals are **decision triggers**, not passive metrics.
+- PM action is required when signals cross thresholds — monitoring without authority is insufficient.
+- Not all signals require rollback; many require **scope or automation adjustment**.
+
+This mapping is reviewed continuously as foundations mature.
+
+---
 
 ### Explicit Non-Goals
 
@@ -169,7 +197,93 @@ Every AI model must have a clearly defined role in the decision system.
 - Human override must be available for all high-risk decisions
 
 ---
+## PM Escalation & Decision Authority
 
+This section defines **who is responsible for decisions** when observability signals indicate elevated risk, and **what actions are authorized at each escalation level**.
+
+Monitoring without decision authority is insufficient.
+
+---
+
+### Escalation Levels
+
+#### Level 0: Normal Operation
+**Signals**
+- Metrics within expected ranges
+- Stable trust and usage patterns
+
+**Authority**
+- AI Product Manager
+
+**Actions**
+- Continue operation
+- Incremental tuning within approved bounds
+
+---
+
+#### Level 1: Degraded Confidence
+**Signals**
+- Rising override or escalation rates
+- Increasing output variance
+- Early cost or latency pressure
+
+**Authority**
+- AI Product Manager (primary)
+- Engineering / Data partner (consulted)
+
+**Actions**
+- Constrain automation scope
+- Increase human-in-the-loop requirements
+- Tighten retrieval or input constraints
+- Pause expansion to new use cases
+
+---
+
+#### Level 2: Elevated Risk
+**Signals**
+- Meaning drift detected
+- Repeated explainability failures
+- Cost per decision exceeds thresholds
+- Policy or access anomalies
+
+**Authority**
+- AI Product Manager
+- Risk / Compliance (consulted or required)
+
+**Actions**
+- Suspend affected workflows
+- Roll back recent changes
+- Initiate formal review
+- Require re-certification of inputs
+
+---
+
+#### Level 3: Critical Incident
+**Signals**
+- Regulatory exposure
+- Material customer harm
+- Unbounded or unauthorized automation
+- Loss of auditability
+
+**Authority**
+- Executive sponsor
+- Risk / Compliance (mandatory)
+
+**Actions**
+- Immediate shutdown of affected capabilities
+- Incident response and documentation
+- Executive review before restart
+
+---
+
+### Principles
+
+- Escalation is **signal-driven**, not opinion-driven.
+- Authority increases as impact and irreversibility increase.
+- AI Product Management retains responsibility for initiating escalation.
+ 
+ ---
+ 
 ## 3. Behavioral Requirements (Core)
 
 Models must meet the following behavioral expectations:
@@ -179,6 +293,10 @@ Models must meet the following behavioral expectations:
 - Degrade gracefully when inputs are incomplete or degraded
 - Avoid forced predictions in ambiguous contexts
 - Produce deterministic outputs for identical inputs where required for auditability
+- Provide consistent outputs for equivalent inputs. Output variance is monitored, and elevated variance triggers review and potential automation constraints.
+- The system must be used only within its defined decision scope. Detection of usage outside approved contexts triggers restriction or suspension pending review.
+- The system must support human review and override of AI outputs. Declining review engagement or abnormal override patterns trigger reassessment of automation level and user experience.
+- Latency degradation beyond defined thresholds triggers fallback behavior or reduced automation to prevent downstream impact.
 
 > AI systems must be designed to *refuse* unsafe decisions, not just optimize for output.
 
@@ -211,6 +329,179 @@ Explainability must scale with risk.
 - Feature or signal contribution summaries where applicable
 - Traceability from output back to input versions
 - Replayable decision logs for audit purposes
+- The system should provide explainable outputs for decision support. Declining explanation sufficiency or rising override rates trigger reassessment of automation scope.
+  
+---
+
+## PM Escalation & Decision Authority
+
+This section defines **who is responsible for decisions** when observability signals indicate elevated risk, and **what actions are authorized at each escalation level**.
+
+Monitoring without decision authority is insufficient.
+
+---
+
+### Escalation Levels
+
+#### Level 0: Normal Operation
+**Signals**
+- Metrics within expected ranges
+- Stable trust and usage patterns
+
+**Authority**
+- AI Product Manager
+
+**Actions**
+- Continue operation
+- Incremental tuning within approved bounds
+
+---
+
+#### Level 1: Degraded Confidence
+**Signals**
+- Rising override or escalation rates
+- Increasing output variance
+- Early cost or latency pressure
+
+**Authority**
+- AI Product Manager (primary)
+- Engineering / Data partner (consulted)
+
+**Actions**
+- Constrain automation scope
+- Increase human-in-the-loop requirements
+- Tighten retrieval or input constraints
+- Pause expansion to new use cases
+
+---
+
+#### Level 2: Elevated Risk
+**Signals**
+- Meaning drift detected
+- Repeated explainability failures
+- Cost per decision exceeds thresholds
+- Policy or access anomalies
+
+**Authority**
+- AI Product Manager
+- Risk / Compliance (consulted or required)
+
+**Actions**
+- Suspend affected workflows
+- Roll back recent changes
+- Initiate formal review
+- Require re-certification of inputs
+
+---
+
+#### Level 3: Critical Incident
+**Signals**
+- Regulatory exposure
+- Material customer harm
+- Unbounded or unauthorized automation
+- Loss of auditability
+
+**Authority**
+- Executive sponsor
+- Risk / Compliance (mandatory)
+
+**Actions**
+- Immediate shutdown of affected capabilities
+- Incident response and documentation
+- Executive review before restart
+
+---
+
+### Principles
+
+- Escalation is **signal-driven**, not opinion-driven.
+- Authority increases as impact and irreversibility increase.
+- AI Product Management retains responsibility for initiating escalation.
+## PM Escalation & Decision Authority
+
+This section defines **who is responsible for decisions** when observability signals indicate elevated risk, and **what actions are authorized at each escalation level**.
+
+Monitoring without decision authority is insufficient.
+
+---
+
+### Escalation Levels
+
+#### Level 0: Normal Operation
+**Signals**
+- Metrics within expected ranges
+- Stable trust and usage patterns
+
+**Authority**
+- AI Product Manager
+
+**Actions**
+- Continue operation
+- Incremental tuning within approved bounds
+
+---
+
+#### Level 1: Degraded Confidence
+**Signals**
+- Rising override or escalation rates
+- Increasing output variance
+- Early cost or latency pressure
+
+**Authority**
+- AI Product Manager (primary)
+- Engineering / Data partner (consulted)
+
+**Actions**
+- Constrain automation scope
+- Increase human-in-the-loop requirements
+- Tighten retrieval or input constraints
+- Pause expansion to new use cases
+
+---
+
+#### Level 2: Elevated Risk
+**Signals**
+- Meaning drift detected
+- Repeated explainability failures
+- Cost per decision exceeds thresholds
+- Policy or access anomalies
+
+**Authority**
+- AI Product Manager
+- Risk / Compliance (consulted or required)
+
+**Actions**
+- Suspend affected workflows
+- Roll back recent changes
+- Initiate formal review
+- Require re-certification of inputs
+
+---
+
+#### Level 3: Critical Incident
+**Signals**
+- Regulatory exposure
+- Material customer harm
+- Unbounded or unauthorized automation
+- Loss of auditability
+
+**Authority**
+- Executive sponsor
+- Risk / Compliance (mandatory)
+
+**Actions**
+- Immediate shutdown of affected capabilities
+- Incident response and documentation
+- Executive review before restart
+
+---
+
+### Principles
+
+- Escalation is **signal-driven**, not opinion-driven.
+- Authority increases as impact and irreversibility increase.
+- AI Product Management retains responsibility for initiating escalation.
+
 
 ### Constraints
 - Black-box outputs are not permitted for regulated decisions
