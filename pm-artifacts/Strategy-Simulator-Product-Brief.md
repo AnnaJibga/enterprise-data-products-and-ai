@@ -14,6 +14,22 @@ Across **six simulated quarters**, players face realistic challenges involving g
 This simulator operationalizes the concepts from the *Foundational Data Products Blueprint* and turns them into a hands-on learning experience.
 
 ---
+## Purpose and Scope
+
+This simulator is a **learning and exploration tool**, not a production system or predictive AI model.
+
+It is designed to help leaders and product teams reason about how **product, governance, trust, and automation decisions compound over time** in enterprise environments where AI-driven capabilities are being considered.
+
+AI in this simulator is represented as **decision pressure and automation risk**, not as a trained model. The focus is on understanding *when* AI should be introduced, *under what conditions* it can be safely expanded, and *how foundational readiness affects outcomes*.
+
+The simulator is used to surface:
+- blind spots in enterprise data and AI strategy
+- unintended consequences of governance shortcuts
+- tradeoffs between speed, trust, cost, and adoption
+- failure modes that emerge when automation outpaces foundations
+
+This simulator is used to test and refine assumptions captured in the exploratory AI product lifecycle defined in `pm-artifacts/ai-lifecycle.md`.
+---
 
 ## 👤 Target Users
 
