@@ -15,4 +15,10 @@ They accompany the exploratory projects in this repository and are intentionally
 - AI model requirement documents defining behavioral, cost, and governance constraints
 - Supporting notes used to reason about risk, observability, and decision boundaries
 
+## Status
+
+This repository represents an ongoing learning and capability-building effort focused on enterprise AI readiness and product management.
+
+Artifacts, simulations, and documents are exploratory and evolving. They are not production systems, finalized methodologies, or commercial offerings.
+
 These artifacts are PM-owned and focus on **enterprise system behavior** and product accountability rather than model implementation.
