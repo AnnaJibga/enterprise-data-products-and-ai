@@ -25,6 +25,123 @@ This document is owned by the **AI Product Manager**.
 - Cost, usage, and performance envelopes
 - Automation and escalation rules
 
+## Model Classes & Selection Principles
+
+This document does not prescribe a specific AI model.  
+Instead, it defines **constraints and decision criteria** that determine which *class* of model is appropriate for a given use.
+
+Model selection is treated as a **product and risk decision**, not an engineering preference.
+
+---
+
+### Model Classes Considered
+
+The following model classes are considered within this lifecycle. Each carries different implications for cost, trust, explainability, and governance.
+
+#### 1. Deterministic / Rule-Based Systems
+- Predictable and fully explainable
+- Low operational cost
+- Limited adaptability
+
+**Appropriate when:**
+- Decisions must be fully auditable
+- Error tolerance is near zero
+- Regulatory or contractual constraints dominate
+
+---
+
+#### 2. Classical ML Models
+- Pattern-based learning with bounded behavior
+- Moderate explainability depending on model type
+- Stable cost profiles
+
+**Appropriate when:**
+- Decision logic must remain inspectable
+- Training data is well understood
+- Behavior variability must be constrained
+
+---
+
+#### 3. Retrieval-Augmented Systems
+- Combine deterministic retrieval with probabilistic generation
+- Reduce hallucination risk
+- Increase dependency on data quality and inventory maturity
+
+**Appropriate when:**
+- Enterprise knowledge must be preserved and surfaced
+- Outputs must be grounded in certified sources
+- Model creativity must be bounded by trusted inputs
+
+---
+
+#### 4. General-Purpose Large Language Models
+- High flexibility and reasoning capability
+- Higher cost and variability
+- Limited inherent explainability
+
+**Appropriate when:**
+- Use cases are assistive, not authoritative
+- Human review is mandatory
+- Cost and behavior variability are explicitly accepted
+
+---
+
+### Model Features That Influence Product Risk
+
+The following model features materially affect system behavior and must be evaluated as product-level risks:
+
+- **Determinism vs variability**  
+  Impacts repeatability, auditability, and trust.
+
+- **Context window size**  
+  Affects scope of reasoning and exposure to sensitive data.
+
+- **Retrieval depth and breadth**  
+  Influences cost, latency, and semantic accuracy.
+
+- **Memory or persistence**  
+  Introduces long-term risk, drift, and data leakage concerns.
+
+- **Latency characteristics**  
+  Directly affect user experience and downstream system coupling.
+
+These features are evaluated against governance, cost, and observability constraints before model selection.
+
+---
+
+### Selection Principles
+
+Model choice follows these principles:
+
+1. **Constraints precede capability**  
+   The system defines what behavior is acceptable before a model is selected.
+
+2. **Explainability requirements limit model classes**  
+   If decisions must be explained, opaque models are constrained or excluded.
+
+3. **Cost ceilings bound model usage**  
+   Models must operate within predefined cost per decision thresholds.
+
+4. **Automation level dictates model flexibility**  
+   Higher automation requires more predictable and inspectable models.
+
+5. **Foundational readiness gates learning**  
+   Models consuming uncertified or unstable inputs are restricted to assistive roles.
+
+---
+
+### Explicit Non-Goals
+
+This document does not:
+- prescribe specific vendors or implementations
+- optimize for model novelty
+- assume fine-tuning or custom training is available
+- prioritize model performance over system trust
+
+Model selection is revisited as foundations mature and constraints evolve.
+
+---
+
 ### Out of Scope
 - Model architecture
 - Feature engineering
