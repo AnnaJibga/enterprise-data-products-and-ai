@@ -29,6 +29,7 @@ The simulator is used to surface:
 - failure modes that emerge when automation outpaces foundations
 
 This simulator is used to test and refine assumptions captured in the exploratory AI product lifecycle defined in `pm-artifacts/ai-lifecycle.md`.
+
 ---
 
 ## 👤 Target Users
