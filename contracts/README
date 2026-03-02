@@ -20,4 +20,4 @@ Structural quality gates tied to identity maturity
 
 These contracts enable consistent identity coherence, structured remediation tracking, and AI eligibility gating across federated systems without introducing centralized data monoliths.
 
-This commit establishes the foundational semantic layer for the enterprise AI operating model.
+This directory establishes the foundational semantic layer for the enterprise AI operating model.
