@@ -1,0 +1,12 @@
+# Rollback and Ownership (Enterprise AI)
+
+## Ownership
+- Product Owner: intent, adoption outcomes, risk acceptance
+- Engineering Owner: reliability, deployment, on-call
+- Governance/Risk Partner: controls, audit readiness
+
+## Rollback
+- Rollback triggers (what conditions force rollback)
+- Rollback mechanism (how to disable safely)
+- Rollback test cadence (how often you validate it works)
+- Communication plan (who is notified and how)
