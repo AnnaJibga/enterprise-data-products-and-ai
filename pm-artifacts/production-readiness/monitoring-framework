@@ -1,0 +1,13 @@
+# Monitoring Framework (Enterprise AI)
+
+## What to Monitor
+- Quality: accuracy, precision/recall, hallucination rate (if LLM)
+- Adoption: usage, task completion, override rate
+- Trust: incident rate, escalation rate, complaint signals
+- Drift: data drift, concept drift, prompt drift (if LLM)
+- Ops: latency, uptime, throughput, cost
+
+## Monitoring Cadence
+- Daily: incidents, latency, cost anomalies
+- Weekly: overrides, quality sampling, drift checks
+- Monthly: stakeholder review + governance check-in
