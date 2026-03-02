@@ -1,1 +1,89 @@
+# Production Readiness Maturity Model (Enterprise AI)
 
+## Purpose
+Define clear, auditable criteria for when an AI capability is ready to move from concept → production,
+with explicit controls for guardrails, monitoring, ownership, and rollback.
+
+## How to Use
+- Assign each AI capability a current level.
+- A capability may only advance when the “Minimum Evidence” is present.
+- “Launch Ready” is a governance decision; “Productionized” is an operating reality.
+
+---
+
+## Level 0 — Concept
+**Definition:** Idea exists; scope and intent are not yet validated.
+
+**Entry Signals**
+- Problem statement and target users identified
+
+**Minimum Evidence**
+- 1–2 paragraph concept note
+- Named owner
+
+---
+
+## Level 1 — Design Complete
+**Definition:** Intended use, constraints, and dependencies are defined. No production claims.
+
+**Minimum Evidence**
+- Product brief (goal, users, workflow)
+- Intended use + non-use statement
+- Data inputs identified (sources + sensitivity)
+- Risk class assigned (low/med/high/critical)
+- Evaluation plan drafted (how “good” will be measured)
+
+---
+
+## Level 2 — Guardrails Defined
+**Definition:** The system has explicit boundaries, escalation paths, and safety controls.
+
+**Minimum Evidence**
+- Guardrails + policy constraints documented
+- Human-in-the-loop requirements (if applicable)
+- Confidence thresholds / routing logic (if applicable)
+- Abuse / misuse scenarios documented
+- Logging requirements defined (what is captured, retention, access)
+
+---
+
+## Level 3 — Monitoring Defined
+**Definition:** Operational health is measurable and failure is detectable.
+
+**Minimum Evidence**
+- Monitoring plan (quality, latency, cost, drift, incidents)
+- Alerting thresholds and on-call ownership defined
+- Feedback loop defined (user corrections, overrides, labels)
+- Incident taxonomy + severity levels defined
+
+---
+
+## Level 4 — Launch Ready
+**Definition:** The capability can be deployed with a controlled rollout and evidence package.
+
+**Minimum Evidence**
+- Go/No-Go checklist completed
+- Security review completed (access, secrets, data handling)
+- Model/data contracts finalized (inputs/outputs/versioning)
+- Rollout plan (pilot scope, success metrics, rollback trigger)
+- Stakeholder sign-off recorded (Product + Eng + Risk/Governance)
+
+---
+
+## Level 5 — Productionized
+**Definition:** The capability is running in a stable operating model with continuous accountability.
+
+**Minimum Evidence**
+- Production monitoring active + reviewed on a cadence
+- Documented rollback executed successfully at least once (test or real)
+- Ownership model active (SLAs/SLOs, incident response)
+- Regular evaluation and drift review in place
+- Change control / release process defined (versioning, approvals)
+- Post-launch adoption metrics tracked and acted on
+
+---
+
+## Notes on Claims (Portfolio / Resume Safety)
+- Levels 0–3: “Designed,” “Defined,” “Governed,” “Operational planning”
+- Level 4: “Launch-ready” (avoid “productionized”)
+- Level 5: “Productionized” is appropriate when monitoring + ownership + rollback are real and ongoing
