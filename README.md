@@ -2,50 +2,132 @@
 
 ![Foundational Data Products Blueprint logo](blueprint-icon-64.png)
 
-## About
+## Overview
 
-This repo showcases how to design and ship trusted, interoperable, and AI‑ready data products in large, regulated enterprises. It brings together strategy simulations, AI‑assisted workflows, and product artifacts that reflect 15+ years of work on data platforms, governance frameworks, and AI readiness across financial and insurance organizations.
+This repository defines an enterprise-oriented operating framework for designing, governing, and productionizing AI-enabled capabilities on top of Foundational Data Products (FDPs).
 
-The focus is practical: moving from “talking about data products and AI” to concrete decisions, workflows, and evaluation patterns a product leader can use inside a real organization.
+It brings together:
 
-## Projects
+- Strategy simulations
+- AI-assisted workflows
+- Product management artifacts
+- Lifecycle governance models
+- Production readiness controls
 
-- **Enterprise Data Products Strategy Simulation**  
-  An interactive, quarter‑by‑quarter simulation where you play the product leader for an enterprise data platform, balancing trust, adoption, governance, speed, budget, and stakeholder sentiment. Each scenario encodes real trade‑offs from foundational data product work (quick wins vs governance, quality, semantics, AI readiness, adoption, ROI storytelling).
+The goal is practical: moving from abstract discussions about “AI readiness” to structured operating models, decision frameworks, and deployable capability blueprints suitable for large, regulated organizations.
 
-- **Data Product Inventory Assistant (AI Workflow)**  
-  A small AI‑assisted workflow that operates on synthetic “enterprise” metadata to suggest candidate data products, producer/consumer mappings, and priority tags for foundational data product potential. It is designed to show how an AI PM might frame inventory, define evaluation metrics, and iterate on prompts/flows for quality and safety.
+---
 
-More projects may be added over time as the book and companion materials evolve.
+## Core Positioning
 
-## PM artifacts
+AI systems do not operate in isolation.
 
-The `/pm-artifacts` folder contains product‑management documents that accompany these projects, such as:
+They consume and amplify enterprise data foundations.
 
-- Product briefs for the strategy simulation and inventory assistant.  
-- Evaluation and experiment plans (how “good” is defined and measured).  
-- Risk and assistant cards describing intended use, limitations, and guardrails.  
-- Checklists and scoring dimensions inspired by foundational data products work (e.g., alignment, reuse, governance, trust, reliability, scalability), adapted for synthetic examples.
+Without coherent foundational data products, explicit ownership, and operational controls, AI capabilities default to fragility, opacity, and unmanaged risk.
 
-These artifacts are meant to illustrate how to turn abstract governance and AI‑readiness goals into concrete decisions, metrics, and operating models.
+This repository structures:
 
-## Intended audience
+- The data foundation layer (FDP thinking)
+- The AI product lifecycle layer
+- The production governance layer
+- The applied capability layer
 
-This portfolio is especially relevant for:
+Together, these form a coherent AI Product Management Operating System.
 
-- Data and product leaders, platform owners, and PMs working on internal data platforms and analytics/AI foundations.  
-- Governance, risk, and compliance leaders who care about traceability, certification, and trust but want product‑centric ways to implement them.  
-- AI and data teams in regulated industries (finance, insurance, healthcare, public sector) who need shared language and workflows with product management.
+---
 
-## How to navigate
+## Repository Structure
 
-- `/projects/strategy-simulation` – React app and docs for the Enterprise Data Products Strategy Simulation.  
-- `/projects/inventory-assistant` – Synthetic data, prompts/notebook, and docs for the Data Product Inventory Assistant.  
-- `/pm-artifacts` – Product briefs, evaluation plans, risk/assistant cards, and checklists that tie the projects together.
+### `/projects/` — Applied Capability & Simulation Layer
 
-Each project folder includes its own `README.md` with details on context, setup (where applicable), and how to interpret the outputs from a product‑management perspective.
+Structured examples and simulations demonstrating enterprise trade-offs and AI product decisions.
 
-## Data and confidentiality
+#### Enterprise Data Products Strategy Simulation
+An interactive, quarter-by-quarter simulation where you act as the product leader of an enterprise data platform, balancing:
 
-All examples, datasets, and scenarios in this repository are entirely synthetic and loosely inspired by common patterns in large enterprises. No real company or client data is used, and no publisher‑owned manuscript content is reproduced.
-Add logo image
+- Trust vs speed
+- Governance vs quick wins
+- Budget vs adoption
+- AI readiness vs operational stability
+
+Each scenario encodes realistic enterprise trade-offs.
+
+#### Data Product Inventory Assistant (AI Workflow)
+A synthetic AI-assisted workflow operating on mock enterprise metadata to:
+
+- Suggest candidate data products
+- Map producers and consumers
+- Surface reuse opportunities
+- Apply foundational data product scoring logic
+
+Demonstrates how AI can support structured inventory and evaluation without bypassing governance.
+
+---
+
+### `/pm-artifacts/` — Governance & Control Layer
+
+Product management artifacts that define how AI-enabled capabilities should be designed, evaluated, and productionized.
+
+Includes:
+
+- AI Product Lifecycle model
+- AI Model Requirements (behavioral, cost, governance constraints)
+- Production Readiness Framework:
+  - Maturity model
+  - Guardrails definition
+  - Monitoring standards
+  - Rollback and ownership model
+- Evaluation and experiment plans
+- Risk and assistant cards
+- Structured scoring dimensions
+
+This layer translates governance and AI-readiness goals into operational controls.
+
+---
+
+## Production Philosophy
+
+An AI capability is not considered production-ready simply because it functions.
+
+Production status requires:
+
+- Explicit intended and non-intended use
+- Risk classification
+- Guardrails and escalation logic
+- Monitoring and drift detection
+- Assigned ownership
+- Defined rollback mechanisms
+
+“Launch” is not equivalent to “Productionized.”
+
+---
+
+## Intended Audience
+
+This framework is relevant for:
+
+- Enterprise AI Product Managers
+- Data platform and analytics leaders
+- Governance, risk, and compliance partners
+- Architecture leaders operating in regulated environments
+- Organizations formalizing AI accountability structures
+
+Especially applicable to financial services, insurance, healthcare, and public-sector environments.
+
+---
+
+## Data & Confidentiality
+
+All examples, datasets, and scenarios in this repository are entirely synthetic and loosely inspired by common enterprise patterns.
+
+No real client data is used.
+No confidential or publisher-owned manuscript content is reproduced.
+
+---
+
+## Status
+
+This repository reflects structured, production-oriented thinking around enterprise AI capability design.
+
+Artifacts are evolving but organized to model governance, accountability, and operational safety before scale.
