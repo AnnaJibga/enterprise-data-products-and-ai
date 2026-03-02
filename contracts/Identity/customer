@@ -1,39 +1,156 @@
-Contracts
+Customer Identity Contract
 
-The contracts/ directory defines the semantic backbone of the enterprise operating model.
+Defines the canonical enterprise Customer entity in a federated but semantically harmonized architecture.
 
-Contracts formalize canonical entity definitions, attribute authority, identity rules, and structural quality expectations in a federated but semantically harmonized architecture.
+This contract establishes identity keys, attribute authority, structural quality tiers, and enrichment boundaries required for certification and AI eligibility.
 
-These are not governance documents.
-They are structural truth definitions.
+1. Canonical Entity Scope
 
-Each contract defines:
+A Customer represents a unique legal or natural person with whom the enterprise has or has had a relationship.
 
-Canonical entity scope (e.g., Customer, Account, Policy, Transaction)
+This contract governs:
 
-Identity key strategy and matching logic
+Individual customers
 
-Attribute-level designated and effective systems of record
+Joint customers (where applicable)
 
-Enrichment boundaries across systems
+Business customers (if included in scope)
 
-Structural data quality tiers tied to certification
+Out of scope: marketing prospects without confirmed identity.
 
-AI eligibility gating criteria
+2. Identity Key Strategy
+Primary Identity Key
 
-Contracts sit upstream of:
+Enterprise Customer ID (ECID)
 
-PM artifacts
+Persistent
 
-Certification workflows
+Non-recycled
 
-Production readiness controls
+Immutable once assigned
 
-Applied AI capabilities
+Matching Inputs
 
-They enable multiple systems to remain operationally federated while harmonized through explicit semantic agreements.
+Used only for identity resolution (not authority):
 
-Without contracts, federated systems drift.
-With contracts, identity remains coherent across modernization cycles.
+First name
 
-This layer defines what “complete and trusted” means before data is certified, transformed, or used for AI.
+Last name
+
+Date of birth
+
+Tax ID / National ID (where legally permitted)
+
+Email (secondary confidence)
+
+Phone (secondary confidence)
+
+Matching confidence levels must be documented:
+
+Deterministic
+
+High-confidence probabilistic
+
+Low-confidence (manual review required)
+
+3. Attribute Authority Model
+
+Authority is defined at the attribute level.
+
+Each attribute must define:
+
+Designated System of Record (dSoR)
+
+Effective System of Record (eSoR) if enrichment occurs
+
+Update responsibility
+
+Example:
+
+Attribute	dSoR	eSoR	Notes
+Legal First Name	Core Banking	Core Banking	Immutable after verification
+Middle Name	CRM	CRM	Optional field
+Date of Birth	Core Banking	Core Banking	Requires documentary validation
+Email	CRM	CRM	Customer-updateable
+Risk Rating	Risk Engine	Risk Engine	Derived attribute
+
+No attribute may have multiple designated authorities.
+
+4. Structural Data Quality Tiers
+
+Quality tiers are structural, not compliance-based.
+
+Tier 1 – Structurally Complete
+
+Required identity keys present
+
+No conflicting attribute authority
+
+No duplicate ECID
+
+Required core attributes populated
+
+Eligible for AI training and high-trust automation.
+
+Tier 2 – Structurally Inconsistent
+
+Missing non-critical attributes
+
+Conflicting attribute versions across systems
+
+Partial enrichment mismatch
+
+Eligible for limited AI usage with confidence tagging.
+
+Tier 3 – Structurally Unresolved
+
+Duplicate identity candidates
+
+Conflicting primary identifiers
+
+Missing required core attributes
+
+Not AI eligible.
+Requires remediation workflow.
+
+5. Enrichment Boundaries
+
+Federated systems may enrich customer data, but:
+
+Enrichment does not override designated authority.
+
+Derived attributes must declare lineage.
+
+Downstream projections must not redefine canonical identity.
+
+The contract governs the canonical layer, not local projections.
+
+6. Certification & AI Eligibility
+
+Customer records may be certified only when:
+
+Tier 1 or approved Tier 2
+
+Attribute authority documented
+
+Identity key validated
+
+Remediation backlog logged (if applicable)
+
+AI systems must reference certified customer views.
+
+7. Versioning
+
+Contract Version: 1.0
+Owner: Enterprise Data Product Lead
+Last Updated: YYYY-MM-DD
+
+Changes require review across:
+
+Data platform
+
+Product
+
+Identity resolution
+
+Risk stakeholders
