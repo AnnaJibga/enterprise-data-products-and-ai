@@ -1,23 +1,43 @@
 # Contracts
 
+Contracts
+
 Semantic backbone for federated but harmonized enterprise entities.
 
-Establishes the top-level contracts/ directory as the semantic backbone of the repository.
+The contracts/ directory defines the structural truth layer of the enterprise operating model.
 
-This folder will contain versioned identity contracts, attribute authority maps, matching rules, and enrichment boundaries that define canonical entities in a federated but semantically harmonized architecture.
+Contracts formalize canonical entity definitions, attribute authority, identity rules, and structural data quality expectations in a federated but semantically harmonized architecture.
 
-Contracts represent structural truth definitions (e.g., Customer, Account, Transaction) and sit upstream of PM artifacts and applied AI projects. They formalize:
+These are not governance documents.
+They are semantic agreements.
 
-Canonical entity definitions
+Each contract defines:
+
+Canonical entity scope (e.g., Customer, Account, Policy, Transaction)
+
+Identity key strategy and matching logic
 
 Attribute-level designated and effective systems of record
 
-Identity key strategy and matching rules
+Enrichment boundaries across systems
 
-Enrichment boundaries and projection constraints
+Structural data quality tiers tied to certification
 
-Structural quality gates tied to identity maturity
+AI eligibility gating criteria
 
-These contracts enable consistent identity coherence, structured remediation tracking, and AI eligibility gating across federated systems without introducing centralized data monoliths.
+Contracts sit upstream of:
 
-This directory establishes the foundational semantic layer for the enterprise AI operating model.
+PM artifacts
+
+Certification workflows
+
+Production readiness controls
+
+Applied AI capabilities
+
+They allow systems to remain operationally federated while harmonized through explicit semantic contracts.
+
+Without contracts, federated systems drift.
+With contracts, identity remains coherent across modernization cycles.
+
+This layer defines what “complete and trusted” means before data is certified, transformed, or used for AI.
