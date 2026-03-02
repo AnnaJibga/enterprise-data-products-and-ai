@@ -1,0 +1,16 @@
+entity: Customer
+version: 0.1
+attributes:
+  legal_last_name:
+    designated_sor: core_banking
+    effective_sor: core_banking
+    confidence: high
+  email:
+    designated_sor: crm
+    effective_sor: crm
+    confidence: medium
+  middle_name:
+    designated_sor: core_banking
+    effective_sor: crm
+    confidence: low
+    notes: "Core missing frequently; remediation backlog open."
