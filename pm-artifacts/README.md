@@ -14,6 +14,7 @@ They accompany the exploratory projects in this repository and are intentionally
 - AI lifecycle definitions (from inventory and readiness through retirement)
 - AI model requirement documents defining behavioral, cost, and governance constraints
 - Supporting notes used to reason about risk, observability, and decision boundaries
+- Production Readiness: maturity model + guardrails + monitoring + rollback/ownership standards
 
 ## Status
 
