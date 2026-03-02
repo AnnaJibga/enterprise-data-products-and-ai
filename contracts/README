@@ -1,3 +1,23 @@
 # Contracts
 
 Semantic backbone for federated but harmonized enterprise entities.
+
+Establishes the top-level contracts/ directory as the semantic backbone of the repository.
+
+This folder will contain versioned identity contracts, attribute authority maps, matching rules, and enrichment boundaries that define canonical entities in a federated but semantically harmonized architecture.
+
+Contracts represent structural truth definitions (e.g., Customer, Account, Transaction) and sit upstream of PM artifacts and applied AI projects. They formalize:
+
+Canonical entity definitions
+
+Attribute-level designated and effective systems of record
+
+Identity key strategy and matching rules
+
+Enrichment boundaries and projection constraints
+
+Structural quality gates tied to identity maturity
+
+These contracts enable consistent identity coherence, structured remediation tracking, and AI eligibility gating across federated systems without introducing centralized data monoliths.
+
+This commit establishes the foundational semantic layer for the enterprise AI operating model.
