@@ -1,0 +1,24 @@
+identity-contract.yaml (template)
+entity: Customer
+version: 0.1
+description: Canonical definition of Customer identity across federated systems.
+
+canonical_keys:
+  primary: canonical_customer_id
+  secondary:
+    - name: deterministic_match_v1
+      fields: [legal_first_name, legal_last_name, dob, ssn_last4]
+      confidence: high
+
+core_attributes:
+  - canonical_customer_id
+  - legal_first_name
+  - legal_last_name
+  - dob
+
+quality_gates:
+  tier1_required:
+    - field: canonical_customer_id
+      rule: not_null
+    - field: legal_last_name
+      rule: not_null
