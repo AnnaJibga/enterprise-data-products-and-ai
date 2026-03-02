@@ -1,0 +1,17 @@
+# Guardrails Definition (Enterprise AI)
+
+## Guardrail Categories
+- Intended use / Non-use
+- Human-in-the-loop requirements
+- Thresholds and routing rules
+- Data handling constraints (PII/PHI/confidential)
+- Prompt / input constraints (if LLM)
+- Output constraints (format, citations, refusal behavior)
+- Escalation paths (when to stop / ask / route)
+- Logging + auditability
+
+## Minimum Guardrails Package
+- Guardrails doc exists
+- Misuse scenarios documented
+- Kill switch defined
+- Owner accountable for review cadence
